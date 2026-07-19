@@ -13,8 +13,7 @@ Most projects should simply extend from [`canonical/auto`](#canonicalauto-rulese
 ```ts
 // eslint.config.ts
 import { defineConfig } from 'eslint/config';
-
-import { auto } from 'eslint-config-canonical/auto';
+import auto from 'eslint-config-canonical/auto';
 
 export default defineConfig(auto);
 ```
@@ -56,8 +55,7 @@ This package includes the following rulesets:
 
 ```ts
 import { defineConfig } from "eslint/config";
-
-import { auto } from "eslint-config-canonical";
+import auto from "eslint-config-canonical/auto";
 
 export default defineConfig(auto, {
   files: ["**/*.{ts,tsx}"],
@@ -71,10 +69,10 @@ For the most part, Prettier and Canonical are already compatible. There are only
 
 ```ts
 import { defineConfig } from "eslint/config";
+import auto from "eslint-config-canonical/auto";
+import { recommended as prettier } from "eslint-config-canonical/prettier";
 
-import { auto, prettier } from "eslint-config-canonical";
-
-export default defineConfig(auto, prettier.recommended);
+export default defineConfig(auto, prettier);
 ```
 
 > **Note** The reason for using Prettier as an ESLint plugin (as opposed to a separate tool) is because having multiple tools that apply formatting complicates IDE and other tooling setup.
@@ -87,9 +85,9 @@ Since Canonical style guide includes more rules than any other style guide, you 
 
 ```ts
 import { defineConfig } from "eslint/config";
-
 import eslintConfigESLint from "eslint-config-eslint";
-import { zod, vitest } from "eslint-config-canonical";
+import { recommended as vitest } from "eslint-config-canonical/vitest";
+import { recommended as zod } from "eslint-config-canonical/zod";
 
 export default defineConfig(
   eslintConfigESLint,
