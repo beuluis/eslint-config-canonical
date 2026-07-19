@@ -84,7 +84,7 @@
     "build": "tsc",
     "find-deprecated": "(cd scripts; node find-deprecated.js)",
     "generate-stats": "(cd scripts; node generate-stats.js)",
-    "generate-typescript-compatibility-rules": "(cd scripts; node generate-typescript-compatibility-rules.js)",
+    "generate-typescript-compatibility-rules": "(cd scripts; node generate-typescript-compatibility-rules.js) && eslint configurations/typescript-compatibility.ts --fix",
     "lint": "eslint --report-unused-disable-directives .",
     "setup-dev": "(npm run build; npm link; cd scripts; npm ci; npm link eslint-config-canonical)"
   },
