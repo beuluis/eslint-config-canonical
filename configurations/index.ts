@@ -1,3 +1,4 @@
+export * as auto from './auto.js';
 export * as ava from './ava.js';
 export * as browser from './browser.js';
 export * as canonical from './canonical.js';
